@@ -49,7 +49,7 @@ export const newsDelete = (newsId) => async (dispatch, getState) => {
     dispatch({ type: NEWS_DELETE_REQUEST })
     const { userSignin: { userInfo } } = getState()
     try {
-        const { data } = await Axios.delete(`/api/news/delete/${newsId}`, {
+        const { data } = await Axios.delete(`/api/news/delete/${newsId}`, {  //ok
             headers: { Authorization: `Bearer ${userInfo.token}` }
         })
         dispatch({ type: NEWS_DELETE_SUCCESS, payload: data })
